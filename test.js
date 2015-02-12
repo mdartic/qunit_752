@@ -7,7 +7,7 @@ var isNotNull = function(test) {
         throw 'test null or undefined';
 }
 
-QUnit.test("If I use global assertions, it _____?", function() {
+QUnit.test("If I use global assertions, it works", function() {
     expect(2);
 
     deepEqual(isNotNull('pouet'), true);
