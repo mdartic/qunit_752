@@ -8,7 +8,6 @@ var isNotNull = function(test) {
 }
 
 QUnit.test("If I use localAssert, it works", function (localAssert) {
-    expect(2);
 
     localAssert.deepEqual(isNotNull('pouet'), true);
     
