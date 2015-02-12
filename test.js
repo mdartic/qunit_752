@@ -7,7 +7,18 @@ var isNotNull = function(test) {
         throw 'test null or undefined';
 }
 
-QUnit.test("I can't use assert.throws in 1.17.1 but ok with a fix", function () {
+QUnit.test("If I use localAssert, it works", function (localAssert) {
+    expect(2);
+
+    localAssert.deepEqual(isNotNull('pouet'), true);
+    
+    localAssert.throws(function () {
+        isNotNull(null);
+    });
+});
+
+
+QUnit.test("If I use direct assert, it crashes in official but work in updated qunit", function () {
     expect(2);
 
     QUnit.assert.deepEqual(isNotNull('pouet'), true);
